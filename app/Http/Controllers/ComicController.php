@@ -103,6 +103,8 @@ class ComicController extends Controller
         $dataModified = $request->all();
         $comic = Comic::find($id);
         $comic->update($dataModified);
+
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -113,6 +115,9 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic = Comic::find($id);
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }
