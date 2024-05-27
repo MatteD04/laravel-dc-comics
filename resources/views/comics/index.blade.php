@@ -19,6 +19,9 @@
                 <div class="card-body">
                     <a href="{{route('comics.show', ['comic' => $comic->id])}}" class="card-link">info</a>
                 </div>
+                <div class="card-body">
+                    <a href="{{route('comics.edit', ['comic' => $comic->id])}}" class="card-link">modifica</a>
+                </div>
             </div>
         </div>
     @endforeach
