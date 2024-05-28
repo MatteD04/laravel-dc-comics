@@ -51,14 +51,16 @@ class ComicController extends Controller
                 'series' => 'required|min:5|max:100',
                 'sale_date' => 'required|max:10',
                 'type' => 'required|min:5|max:50'
+            ],
+            [
+                'title.required' => 'Il titolo è obbligatorio',
+                'description.required' => 'La descrizione è obbligatoria',
+                'thumb.required' => 'L immagine è obbligatoria',
+                'price.required' => 'Il prezzo è obbligatorio',
+                'series.required' => 'La serie è obbligatoria',
+                'sale_date.required' => 'La data di vendita è obbligatoria',
+                'type.required' => 'Il tipo è obbligatorio'
             ]
-            //[
-            //     'title.required' => 'Il campo titolo è obbligatorio',
-            //     'title.max' => 'Il campo titolo non può avere più di 50 caratteri',
-            //     'title.min' => 'Il campo titolo deve avere almeno 5 caratteri',
-            //     'image.required' => 'Il campo immagine è obbligatorio',
-            //     'type.required' => 'Il campo tipo è obbligatorio'
-            //]
         );
 
 
