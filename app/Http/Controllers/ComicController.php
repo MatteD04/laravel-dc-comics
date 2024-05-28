@@ -42,6 +42,26 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate(
+            [
+                'title' => 'required|min:5|max:100',
+                'description' => 'required',
+                'thumb' => 'required|max:20',
+                'price' => 'required|max:9',
+                'series' => 'required|min:5|max:100',
+                'sale_date' => 'required|max:10',
+                'type' => 'required|min:5|max:50'
+            ]
+            //[
+            //     'title.required' => 'Il campo titolo è obbligatorio',
+            //     'title.max' => 'Il campo titolo non può avere più di 50 caratteri',
+            //     'title.min' => 'Il campo titolo deve avere almeno 5 caratteri',
+            //     'image.required' => 'Il campo immagine è obbligatorio',
+            //     'type.required' => 'Il campo tipo è obbligatorio'
+            //]
+        );
+
+
         $formComics = $request->all();
 
         $newComic = new Comic();
